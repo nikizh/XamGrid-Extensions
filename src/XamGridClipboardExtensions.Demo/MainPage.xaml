@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="XamGridClipboardExtensions.Demo.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ig="http://schemas.infragistics.com/xaml"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="600">
+    <Grid Background="Gray">
+
+        <ig:XamGrid Width="700"
+                    Height="500"
+                    ItemsSource="{Binding}"
+                    ClipboardPasting="XwGridClipboardPasting"
+                    ClipboardCopying="XwGridClipboardCopying">
+
+            <ig:XamGrid.Columns>
+                <ig:GroupColumn Key="GC0"
+                                HeaderText="Integers">
+                    <ig:GroupColumn.Columns>
+                        <ig:TextColumn Key="Int" />
+                        <ig:TextColumn Key="NInt" />
+                    </ig:GroupColumn.Columns>
+                </ig:GroupColumn>
+            </ig:XamGrid.Columns>
+
+            <ig:XamGrid.ClipboardSettings>
+                <ig:ClipboardSettings AllowCopy="True"
+                                      AllowPaste="True"
+                                      CopyOptions="ExcludeHeaders" />
+            </ig:XamGrid.ClipboardSettings>
+
+            <ig:XamGrid.SelectionSettings>
+                <ig:SelectionSettings CellSelection="Multiple" />
+            </ig:XamGrid.SelectionSettings>
+
+            <ig:XamGrid.EditingSettings>
+                <ig:EditingSettings AllowEditing="Cell" />
+            </ig:XamGrid.EditingSettings>
+
+        </ig:XamGrid>
+    </Grid>
+</UserControl>
