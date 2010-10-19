@@ -152,7 +152,7 @@ namespace XamGridExtensions
                         if (result == MessageBoxResult.Cancel)
                         {
                             stopCellProcessing = true;
-                            return;
+                            break;
                         }
                     }
                     else
